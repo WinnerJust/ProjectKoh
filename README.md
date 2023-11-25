@@ -52,7 +52,7 @@ So far two dataset were considered.
 
 ## State of the app on 15 Nov
 
-[media/bandicam_2023-11-15_23-34-50-723.mp4](https://github.com/WinnerJust/ProjectKoh/blob/main/media/bandicam_2023-11-15_23-34-50-723.mp4)
+https://github.com/WinnerJust/ProjectKoh/blob/main/media/bandicam_2023-11-15_23-34-50-723.mp4
 
 Demo was recorded using g4f and dataset 1.
 
