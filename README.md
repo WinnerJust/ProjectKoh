@@ -43,11 +43,11 @@ This dataset has 49 pathologies, 223 symptoms, and 1025602 (!) rows of training 
 
 Let’s construct a Decision Tree for this dataset.
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled.png)
+![Untitled](media/Untitled.png)
 
 Initially it is in French. So it was decided to translate it.
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%201.png)
+![Untitled](media/Untitled%201.png)
 
 **Adding noise to the dataset**
 
@@ -55,19 +55,19 @@ It was decided to see the distribution of symptoms for every pathology to see if
 
 Example: symptom distribution for URTI:
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%202.png)
+![Untitled](media/Untitled%202.png)
 
 As you can see it is very diverse. But it was decided to try to add some noise to the dataset anyway to see if we can improve accuracy or improve quality/quantity of questions asked.
 
 Trying to add 10 random symptoms for each of 10000 patients in the sampled dataset. Full dataset has 1025602 patients. Accuracy:
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%203.png)
+![Untitled](media/Untitled%203.png)
 
 Indeed we got more questions. But the problem is that the new questions are irrelevant. For example:
 
  
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%204.png)
+![Untitled](media/Untitled%204.png)
 
 Tree starts to ask about randomly added symptoms in this case about whether patient has pain in his right ring finger which is completely irrelevant.
 
@@ -79,13 +79,13 @@ Dataset 2 contains differential diagnosis for every patient in addition to groun
 
 Example:
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%205.png)
+![Untitled](media/Untitled%205.png)
 
 Predicting differential diagnosis instead of one pathology could have greatly complicated the task, because this requires some other model rather than decision tree. But all alternative models are not able to provide evaluation of users’ questions (as it was mentioned in the section **Technology choosing**).
 
 It was decided to analyze the differential diagnosis data to determine its relevance for our task.
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%206.png)
+![Untitled](media/Untitled%206.png)
 
 Here we come to a contraction: most probable pathology has probability of 0.3203 to be actually present (that is to be equal to the ground truth pathology) on average. But in fact in the dataset 2 ground truth pathology is equal to the most probable pathology with the probability of 0.7387.
 
@@ -101,7 +101,7 @@ There were two reasons for developing custom Tree:
     
     Every tree that was built so far decided to put the question about pain radiation as the first question:
     
-    ![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%207.png)
+    ![Untitled](media/Untitled%207.png)
     
     The reason behind this is with this question we replace two other questions:
     
@@ -120,13 +120,13 @@ There were two reasons for developing custom Tree:
 
 Custom Tree was built using parameters found via Grid Search. Accuracy of the custom Tree:
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%208.png)
+![Untitled](media/Untitled%208.png)
 
 As you can see the accuracy is very close to the accuracy of scikit Tree. And the actual Tree is very similar to the scikit Tree:
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%209.png)
+![Untitled](media/Untitled%209.png)
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%2010.png)
+![Untitled](media/Untitled%2010.png)
 
 The slight difference is present because the custom Tree conditions next features on the previous ones.
 
@@ -158,10 +158,11 @@ Fine-tuning was done using modified George Mihaila’s Colab Notebook: [https://
 
 Results of the fine-tuning:
 
-![Untitled](Project%20Koh%20e4ca4e0e80ec4b509dbf15651edb73d8/Untitled%2011.png)
+![Untitled](media/Untitled%2011.png)
 
 Model gives good performance when using the application.
 
 ### Final version demonstration
 
-Is available at: [https://github.com/WinnerJust/ProjectKoh](https://github.com/WinnerJust/ProjectKoh)
+https://github.com/WinnerJust/ProjectKoh/assets/69462857/f100e858-bd69-4064-b6f1-5111ecd975bb
+
