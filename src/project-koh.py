@@ -479,7 +479,7 @@ def start():
                   #right_x = x[~left_mask]
                   b_index, b_score = index, ent
 
-              if column_names[index] == symptom_queried and ent:
+              if column_names[index] == symptom_queried:
                   our_score = ent
 
                   left_x = sub_tree_x[left_mask]
@@ -487,8 +487,9 @@ def start():
                   next_sub_tree_x = right_x if symptom_queried in symptoms else left_x
                   next_sub_tree_y = right_y if symptom_queried in symptoms else left_y
 
-          sub_tree_x = next_sub_tree_x
-          sub_tree_y = next_sub_tree_y
+          if our_score:
+              sub_tree_x = next_sub_tree_x
+              sub_tree_y = next_sub_tree_y
 
           print("SYSTEM: Best symptoms that could be queried that this point:", column_names[b_index])
           print("SYSTEM: Its entropy is:", b_score)
